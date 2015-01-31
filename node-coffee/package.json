@@ -1,0 +1,18 @@
+{
+  "name": "node-coffee",
+  "version": "0.0.0",
+  "main": "app.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "coffee": "~1.0.0",
+    "express": "~4.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "coffee -w app.coffee"
+  }
+}
