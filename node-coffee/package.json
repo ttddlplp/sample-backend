@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "main": "app.coffee",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "coffee -w server.coffee",
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
@@ -11,8 +12,8 @@
     "coffee": "~1.0.0",
     "express": "~4.11.1"
   },
-  "devDependencies": {},
-  "scripts": {
-    "start": "coffee -w app.coffee"
+  "devDependencies": {
+    "mocha": "~2.1.0",
+    "chai": "~1.10.0"
   }
 }

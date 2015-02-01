@@ -29,8 +29,6 @@ app.put     '/developers/:id', developers.update
 app.delete  '/developers/:id', developers.delete
 app.delete  '/developers',     developers.deleteAll
 
-
-app.listen app.get('port'), ->
-  console.log "Listening on port #{app.get('port')}"
-
-
+exports.listen = (port) ->
+  app.listen port, ->
+    console.log "Listening on port #{app.get('port')}"

@@ -13,11 +13,14 @@ exports.retrieve = (req, res) ->
       res.send(coll)
 
 exports.create = (req, res) ->
-  Resource = mongoose.model('Developer')
-  fields = req.body
-  return res.status(400).send("Invalid JSON.") if !fields?
+  return res.status(415).send() if !req.is('application/json')
+  return res.status(400).send("Invalid JSON.") \
+  if !req.body.name? \
+  or !req.body.desc? \
+  or !req.body.gender?
 
-  r = new Resource(fields)
+  Resource = mongoose.model('Developer')
+  r = new Resource(req.body)
   r.save (err, resource) ->
     return res.send(500, { error: err }) if err?
     res.send(resource)
